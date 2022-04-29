@@ -1,0 +1,22 @@
+$mainColor: #15023a;
+$mobileWidth: 768px;
+$padWidth: 810px;
+$mainLightColor: rgb(249, 243, 237);
+
+@mixin mobile {
+	@media screen and (max-width: #{$mobileWidth}) {
+		@content;
+	}
+}
+
+@mixin ipad {
+	@media screen and (max-width: #{$padWidth}) {
+		@content;
+	}
+}
+
+@keyframes arrowBlink {
+	to {
+		opacity: 0;
+	}
+}

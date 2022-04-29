@@ -1,0 +1,184 @@
+@import "../../global.scss";
+
+.about {
+	background-color: $mainLightColor;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+	margin: 0;
+
+	@include ipad {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	.imgDiv {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: visible;
+
+		img {
+			max-width: 50%;
+			height: auto;
+		}
+	}
+
+	.aboutPara {
+		margin: auto;
+		text-align: center;
+		padding: 5px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-right: 40px;
+		border-radius: 20px;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+		flex: 1;
+		width: 50%;
+		line-height: 1.5em;
+		overflow: visible;
+
+		@include ipad {
+			margin: 100px auto 60px auto;
+			box-shadow: none;
+			width: 80%;
+		}
+
+		@include mobile {
+			margin: 10px auto 20px auto;
+			box-shadow: none;
+		}
+
+		h1 {
+			margin: 20px auto;
+			overflow: hidden;
+			font-size: 35px;
+		}
+
+		p {
+			line-height: 2em;
+			font-size: 17px;
+			width: 80%;
+			text-align: justify;
+
+			@include mobile {
+				line-height: 1.5em;
+			}
+		}
+
+		.hobbiesUl {
+			text-align: justify;
+			width: 74%;
+
+			li {
+				list-style: none;
+			}
+		}
+
+		h4 {
+			font-size: 20px;
+			border: 1px solid black;
+			width: fit-content;
+			margin: 10px auto 0 auto;
+			padding: 10px 15px;
+			border-radius: 20px;
+			margin-bottom: 10px;
+
+			&:hover {
+				background-color: rgb(207, 207, 207);
+				box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+				cursor: pointer;
+			}
+
+			a {
+				color: black;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.techStack {
+		width: 80%;
+		text-align: center;
+		// margin-bottom: 30px;
+
+		// @include ipad {
+
+		// }
+
+		h1 {
+			margin-bottom: 15px;
+		}
+
+		.techWrapper {
+			display: grid;
+			grid-template-columns: repeat(4, 100px);
+			margin-bottom: 30px;
+			justify-content: center;
+			align-items: center;
+			place-content: center;
+			gap: 30px;
+			scrollbar-width: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+
+			// @include ipad {
+			// 	display
+			// }
+			@include mobile {
+				display: grid;
+				height: 100px;
+				grid-template-columns: repeat(4, auto);
+			}
+
+			.oneTechStack {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 5px;
+
+				p {
+					@include mobile {
+						font-size: 14px;
+					}
+				}
+
+				img {
+					width: 40%;
+					height: auto;
+
+					@include ipad {
+						width: 50%;
+						height: auto;
+					}
+					@include mobile {
+						height: auto;
+						width: 35%;
+					}
+				}
+			}
+		}
+	}
+
+	a {
+		img {
+			max-width: 30px;
+			height: auto;
+			position: absolute;
+			bottom: 10px;
+			animation: arrowBlink 2s infinite;
+		}
+	}
+}

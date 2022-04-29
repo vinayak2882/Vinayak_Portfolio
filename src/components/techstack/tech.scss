@@ -1,0 +1,106 @@
+@import "../../global.scss";
+
+.techstack {
+	height: 100vh;
+	background-color: $mainLightColor;
+
+	.skillsHeading {
+		text-align: center;
+		color: black;
+		margin-top: 10px;
+		font-size: 50px;
+	}
+
+	.wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include ipad {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+
+		@include mobile {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+
+		.leftPara {
+			flex: 1;
+			height: 100%;
+			box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+			margin-left: 20px;
+			padding: 20px 0;
+			border-radius: 20px;
+
+			@include ipad {
+				margin-top: 30px;
+				box-shadow: none;
+			}
+
+			@include mobile {
+				box-shadow: none;
+			}
+
+			ul {
+				li {
+					font-size: 20px;
+					line-height: 2.5em;
+
+					@include ipad {
+						font-size: 18px;
+						line-height: 2em;
+					}
+
+					&::before {
+						content: "# ";
+						color: teal;
+						font-weight: 600;
+					}
+				}
+			}
+		}
+		.rightTech {
+			flex: 0.7;
+			margin-right: 80px;
+
+			@include mobile {
+				margin-right: 0;
+			}
+
+			h1 {
+				text-align: center;
+
+				color: black;
+				margin-bottom: 20px;
+				font-size: 25px;
+
+				@include ipad {
+					font-size: 20px;
+					margin-top: 10px;
+				}
+			}
+			.stackIcons {
+				display: grid;
+				grid-template-columns: repeat(4, auto);
+				place-content: center;
+				gap: 20px 50px;
+
+				@include mobile {
+					display: grid;
+					grid-template-columns: repeat(3, auto);
+				}
+				img {
+					max-width: 70px;
+					height: auto;
+
+					@include mobile {
+						max-width: 60px;
+						height: auto;
+					}
+				}
+			}
+		}
+	}
+}
